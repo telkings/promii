@@ -1,13 +1,15 @@
 <template>
   <div>
-    {{categories}}
-    <Card></Card>
+          <Card :value="categories" />
   </div>
 </template>
 
 <script>
 export default {
   name: 'IndexPage',
+  data () {
+    return {}
+  },
    async asyncData({$axios, store }) {
    
    const categories = await $axios.get("/categories", {
@@ -18,5 +20,10 @@ export default {
        categories: categories.data
     };
   },
+  methods:{
+    volverInicio(){
+      console.log("Volviendo al inicio")
+    }
+  }
 }
 </script>
