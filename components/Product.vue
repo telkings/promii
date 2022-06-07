@@ -1,10 +1,13 @@
 <template>
 <div>
-      <NuxtLink to="/"
-      class="link">
-       Volver
-      </NuxtLink>
-    
+  <br>
+     
+        <Search
+      @list="search($event)"
+      />
+
+  <br>
+  
 <v-flex xs12 sm12>
   <v-layout row>
    <v-card 
@@ -27,7 +30,7 @@
     </h3>
       <div class="div-button-p">
           <div class="div-button-h">
-              <button class="button-css">Agregar</button>
+              <v-btn block color="#a31c6b" dark @click="addCart(product.name)">Agregar</v-btn>
         </div>
       </div>
   </v-card>
@@ -35,6 +38,7 @@
    </v-layout>
     
 </v-flex> 
+
 
 
   </div>
@@ -46,8 +50,17 @@ export default {
     props: ["data"],
     data: () => ({
       show: false,
-    }) 
-
+      moviess:[],
+      empty: null,
+    }),
+  methods:{
+    search(incomingParameter){
+         this.data[0].products = incomingParameter
+    },
+    addCart(product){
+      console.log(product +" Agregado")
+    }
+  }
 }
 </script>
 

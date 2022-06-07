@@ -101,6 +101,35 @@ router.post('/products', async (req, res) => {
 
 });
 
+
+
+// //OBTIENE UN PRODUCTO
+router.get('/search',  async (req, res) => {
+
+    try {
+        //console.log("Esto me esta imprimiendo la consola  => "+req.headers.name)
+
+       var nameSearch = req.headers.name
+       var found = await Product.find({ name: {$regex: new RegExp('.*'+nameSearch+'.*','i')}}).limit(10).exec();
+       
+
+        return res.json(found)
+
+    } catch (error) {
+
+        console.log(error);
+
+        const response = {
+            status: "error",
+            error: "Error Obteniendo el producto"
+        }
+
+        return res.status(500).json(response);
+
+    }
+
+});
+
 // //ACTUALIZA UN PRODUCTO (desde admin)
 // router.put('/products', checkAuth, async (req, res) => {
 

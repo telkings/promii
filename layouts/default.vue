@@ -1,6 +1,6 @@
 <template>
   <v-app dark>
-    <v-navigation-drawer
+    <!-- <v-navigation-drawer
       v-model="drawer"
       :mini-variant="miniVariant"
       :clipped="clipped"
@@ -23,19 +23,31 @@
           </v-list-item-content>
         </v-list-item>
       </v-list>
-    </v-navigation-drawer>
+    </v-navigation-drawer> -->
+
+    <!-- ********************* Barra superior ******************** -->
     <v-app-bar
       :clipped-left="clipped"
       fixed
       app
     >
-      <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
-      <v-btn
+                <!-- <a href="">
+                     <img 
+                       src="whatsapp2.png" 
+                       alt="https://api.whatsapp.com/send?phone=573112701507&text=Hola%2C%20ComercialCf%20Quiero%20Cotizar%20un%20Servicio%20Ahora!">
+                 </a> -->
+      <!-- <v-app-bar-nav-icon @click.stop="drawer = !drawer" /> -->
+
+      
+      
+      <!-- <v-btn
         icon
         @click.stop="miniVariant = !miniVariant"
-      >
+      > -->
         <!-- <v-icon>mdi-{{ `chevron-${miniVariant ? 'right' : 'left'}` }}</v-icon> -->
-      </v-btn>
+      <!-- </v-btn> -->
+
+    
       <!-- <NuxtLink to="/">
        Volver
       </NuxtLink> -->
@@ -60,11 +72,20 @@
         <v-icon>mdi-menu</v-icon>
       </v-btn> -->
     </v-app-bar>
+     <!-- *********************  Cierre Barra superior ******************** -->
+
+
+
+      <!-- ********************* CONTENIDO PRINCIPAL ******************** -->
     <v-main>
       <v-container>
         <Nuxt />
       </v-container>
     </v-main>
+
+    <!-- ********************* CONTENIDO PRINCIPAL ******************** -->
+
+
     <!-- <v-navigation-drawer
       v-model="rightDrawer"
       :right="right"

@@ -1,6 +1,8 @@
 <template>
 <div>
+    <Flotante/> 
     <Product :data="products"/>
+    
 </div>
 </template>
 
