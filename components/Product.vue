@@ -40,7 +40,7 @@
 </v-flex> 
 
 
-
+<notifications group="auth" position="top center" width="300px"/>
   </div>
 </template>
 
@@ -59,6 +59,13 @@ export default {
     },
     addCart(product){
       console.log(product +" Agregado")
+      this.$notify({
+        'group': 'auth',
+        'title': 'Actualizo carrito',
+        'text': `${product} Agregado`,
+        'type': 'success',
+        'duration': 2000
+      })
     }
   }
 }
