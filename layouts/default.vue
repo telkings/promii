@@ -84,9 +84,9 @@
     </v-main>
 
     <!-- ********************* CONTENIDO PRINCIPAL ******************** -->
+    
 
-
-    <!-- <v-navigation-drawer
+        <!-- <v-navigation-drawer
       v-model="rightDrawer"
       :right="right"
       temporary
