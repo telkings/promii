@@ -6,6 +6,8 @@ const morgan = require("morgan");
 const cors = require("cors");
 const dotenv = require('dotenv').config();
 const colors = require("colors");
+const multer = require('multer');
+const path = require('path');
 
 //instances
 const app = express();
@@ -19,11 +21,22 @@ app.use(express.json({limit: '2mb',  extended: true}));
 app.use(express.urlencoded({limit: '2mb', extended: true}));
 app.use(cors());
 
+//multer
+const storage = multer.diskStorage({
+    destination: path.join(__dirname, 'public/uploads'),
+    filename: (req, file, cb, filename) => {
+        //console.log(file);
+        cb(null, new Date().getTime() + path.extname(file.originalname));
+    }
+}) 
+app.use(multer({storage}).array('file', 2)); //recibo un array con la imagen y dos parametros mas
+//app.use(multer({storage}).single('file'))
 
 //routes
 
 app.use("/api", require("./routes/categories.js"));
 app.use("/api", require("./routes/products.js"));
+app.use("/api", require("./routes/images.js"));
 
 module.exports = app;
 
