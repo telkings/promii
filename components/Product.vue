@@ -15,19 +15,26 @@
      class="mx-auto my-3" max-width="250" style="line-height:1; ">
     <v-img
       :src="product.img"
+      width="100%"
       height="200px"
     ></v-img>
 
-    <h2 style="text-align:center; padding:10px">
+    <h4 style="text-align:center; padding:2px">
      {{product.name}}
-    </h2>
+    </h4>
     
-    <h3 style="text-align:center; padding:10px">
+    <h4 style="text-align:center; padding 3px">
       {{product.shortDescription}}
-    </h3>
+    </h4>
     <h3 class="price">
       ${{product.price}}
     </h3>
+    <h3 v-if="product.priceDiscount" class="price2">
+      ${{product.priceDiscount}}
+    </h3>
+    <!-- <h3 v-if="product.stock" class="price2">
+      ${{product.stock}}
+    </h3> -->
       <div class="div-button-p">
           <div class="div-button-h">
               <v-btn block color="#a31c6b" dark @click="addCart(product.name)">Agregar</v-btn>
@@ -98,7 +105,16 @@ border-radius: 10px; /*bordes redondos*/
 .price {
     text-align:center; 
     color:blue;
-    font-size: 30px;
+    font-size: 25px;
+    /*text-decoration: none;*/ /*sin ningun cambio*/ 
+    /*text-decoration: line-through;*/ /*Solo linea encima del texto*/ 
+    /*text-decoration: line-through red;*/ /*Linea encima del texto con color*/ 
+    /*Si tiene descuento adicional mostrar line-through en price si no mostrar none*/
+}
+.price2 {
+    text-align:center; 
+    color:rgb(208, 0, 255);
+    font-size: 25px;
 }
 .link{
 border: 1px solid #802966; /*anchura, estilo y color borde*/

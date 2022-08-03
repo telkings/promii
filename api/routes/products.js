@@ -72,6 +72,29 @@ router.get('/product',  async (req, res) => {
 
 });
 
+// //OBTIENE Todos los Productos
+router.get('/product-admin',  async (req, res) => {
+
+    try {
+        
+        var products = await Product.find();//Trae todas las categorias
+  
+        return res.json(products)
+  
+    } catch (error) {
+  
+        console.log(error);
+  
+        const response = {
+            status: "error",
+            error: error
+        }
+  
+        return res.status(500).json(response);
+  
+    }
+});
+
 // //CREA UN PRODUCTO
 router.post('/products', async (req, res) => {
 

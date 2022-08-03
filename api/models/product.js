@@ -5,12 +5,13 @@ const Schema = mongoose.Schema;
 const productSchema = new Schema({
     //storeId: { type: String, required: [true] },
     name: { type: String, required: [true] },
-    url: {type: String, required: [true] },
     categoryId: { type: String, required: [true] },
     shortDescription: { type: String, required: [true] },
     img: { type: String, required: [true] },
+    public_id: { type: String, required: [true] },
     price: { type: Number, required: [true] },
-    stock: { type: Number, required: [true] },
+    priceDiscount: { type: Number},//Precio con descuento opcional
+    stock: { type: Number},//Stock de producto opcional
     active: { type: Boolean, required: [true], default: false },
     time: {
       type: Number,

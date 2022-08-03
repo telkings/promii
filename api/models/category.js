@@ -5,9 +5,10 @@ const Schema = mongoose.Schema;
 
 const categorySchema = new Schema({
     //storeId: { type: String, required: [true] },
-    name: { type: String, required: [true] },
-    image: { type: String, default: "https://www.iconfinder.com/icons/2393256/grocery_items_list_shop_shopping_store_icon" },
+    // name: { type: String, required: [true] },
     url: { type: String, required: [true], unique: true },
+    image: { type: String, required: [true] },
+    public_id:{ type: String, required: [true] },
     active: { type: Boolean, default: false },
     time: {
       type: Number,

@@ -15,12 +15,12 @@
       :src="category.image"
     ></v-img>
    </NuxtLink>
-    <v-card-title style="font-size: 30px">{{category.name}}</v-card-title>
+    <v-card-title style="font-size: 30px">{{category.url}}</v-card-title>
 
     <v-card-text>
-      <div>Aguila, Poker, Club colombia.</div>
-      <v-divider class="mx-4"></v-divider>
-      <h2>Servicio a Domicilio.</h2>
+      <!-- <div>Aguila, Poker, Club colombia.</div>
+      <v-divider class="mx-4"></v-divider> -->
+      <h2>A Domicilio.</h2>
     </v-card-text>
     
     <!-- <v-divider class="mx-4"></v-divider>
